@@ -154,7 +154,7 @@
         dropdownAdapter = Utils.Decorate(dropdownAdapter, MinimumResultsForSearch);
         dropdownAdapter = Utils.Decorate(dropdownAdapter, closeOnSelect);
 
-        $(document).on('select:init', 'select:not(.not_fancy)', function() {
+        $(document).on('select:init', 'select', function() {
             var $select = $(this);
 
             if ($select.parents('.empty-form').length > 0) {
@@ -208,7 +208,7 @@
         });
 
         $(document).ready(function() {
-            $('select:not(.not_fancy)').trigger('select:init');
+            $('select').trigger('select:init');
         });
     });
 })(jet.jQuery);
